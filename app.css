@@ -1,0 +1,16 @@
+.button-container{
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+button{
+    font-family:"VT323"; 
+    font-size: 3rem;
+    font-weight:900; 
+    width:20rem;
+    height:5rem; 
+    padding:auto; 
+    margin:auto; 
+
+}
