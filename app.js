@@ -15,6 +15,8 @@ function appendRandomPokemon() {
     // Replace with your container ID
   
     // Get a random index from the array
+   
+   
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
   
     
