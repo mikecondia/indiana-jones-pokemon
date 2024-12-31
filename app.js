@@ -7,33 +7,29 @@ const imageUrls = ["images/1.gif", "images/4.gif", "images/7.gif", "images/10.gi
      "images/102.gif", "images/104.gif","images/108.gif", "images/109.gif", "images/113.gif", "images/114.gif",
     "images/116.gif","images/118.gif","images/120.gif","images/122.gif","images/129.gif", "images/132.gif","images/133.gif","images/138.gif","images/147.gif","images/151.gif","images/175.gif"
 ];
-// const container = document.getElementById("imageContainer"); 
 
-// imageUrls.forEach(url => {
-//   const img = new Image();
-//   img.src = url;
-//   img.alt = "Image"; // Set alt text for accessibility
-//   container.appendChild(img);
-// });
-function appendRandomImage() {
-    const container = document.getElementById("image-container"); // Replace with your container ID
+
+
+function appendRandomPokemon() {
+    const container = document.getElementById("image-container"); 
+    // Replace with your container ID
   
     // Get a random index from the array
     const randomIndex = Math.floor(Math.random() * imageUrls.length);
+  
+    
     const imageUrl = imageUrls[randomIndex];
   
     // Create an image element
     const img = document.createElement("img");
     img.src = imageUrl;
-    img.alt = "Random Image";
   
     // Append the image to the container
     container.appendChild(img);
 }
-  setInterval(appendRandomImage,1000)
+  setInterval(appendRandomPokemon,100)
 
-
-
+  
 
 
 
