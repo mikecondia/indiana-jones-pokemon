@@ -7,6 +7,20 @@ const pokemonArray = ["images/1.gif", "images/4.gif", "images/7.gif", "images/10
      "images/102.gif", "images/104.gif","images/108.gif", "images/109.gif", "images/113.gif", "images/114.gif",
     "images/116.gif","images/118.gif","images/120.gif","images/122.gif","images/129.gif", "images/132.gif","images/133.gif","images/138.gif","images/147.gif","images/151.gif","images/175.gif"
 ];
+// Possible Answer to repeat problem
+// const originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const uniqueRandomArray = [];
+
+// while (uniqueRandomArray.length < originalArray.length) {
+//   const randomIndex = Math.floor(Math.random() * originalArray.length);
+//   const randomElement = originalArray[randomIndex];
+
+//   if (!uniqueRandomArray.includes(randomElement)) {
+//     uniqueRandomArray.push(randomElement);
+//   }
+// }
+
+// console.log(uniqueRandomArray);
 
 // Append Pokemon Image
   function appendRandomPokemon() {
@@ -14,15 +28,18 @@ const pokemonArray = ["images/1.gif", "images/4.gif", "images/7.gif", "images/10
   // Get a random index from the array
     const randomIndex = Math.floor(Math.random() * pokemonArray.length);
     const imageUrl = pokemonArray[randomIndex];
+ 
     // Create an image element
     const img = document.createElement("img");
     img.src = imageUrl;
    // Append the image to the container
     container.appendChild(img);
   }
-let imageCount = 0;
-const maxImages = 62;
-const intervalId = setInterval(() => {
+
+
+  let imageCount = 0;
+  const maxImages = 61;
+  const intervalId = setInterval(() => {
   if (imageCount < maxImages) {
     // Append your image here
     appendRandomPokemon(); 
@@ -30,7 +47,12 @@ const intervalId = setInterval(() => {
   } else {
     clearInterval(intervalId); // Stop the interval when the limit is reached
   }
-}, 100); // Replace 1000 with your desired interval in milliseconds
+}, 300); 
+
+
+
+
+
 
 
 
