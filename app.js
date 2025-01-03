@@ -7,65 +7,107 @@ const pokemonArray = ["images/1.gif", "images/4.gif", "images/7.gif", "images/10
      "images/102.gif", "images/104.gif","images/108.gif", "images/109.gif", "images/113.gif", "images/114.gif",
     "images/116.gif","images/118.gif","images/120.gif","images/122.gif","images/129.gif", "images/132.gif","images/133.gif","images/138.gif","images/147.gif","images/151.gif","images/175.gif"
 ];
-let emptyPokemonArray = []; 
-// Possible Answer to repeat problem
-// const originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// const uniqueRandomArray = [];
 
-// while (uniqueRandomArray.length < pokemonArray.length) {
-//   const randomIndex = Math.floor(Math.random() * pokemonArray.length);
-//   const randomElement = pokemonArray[randomIndex];
+// Shuffle the array (using the Fisher-Yates algorithm)
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
-//   if (!uniqueRandomArray.includes(randomElement)) {
-//     uniqueRandomArray.push(randomElement);
-//   }
-// }
+const shuffledUrls = shuffle(pokemonArray);
 
-// console.log(uniqueRandomArray);
+// Append images one at a time
+function appendImage() {
+  if (shuffledUrls.length > 0) {
+    const imageUrl = shuffledUrls.pop();
 
-// // Append Pokemon Image
-  function appendRandomPokemon() {
-    const container = document.getElementById("image-container"); 
-//   Get a random index from the array
-    const randomIndex = Math.floor(Math.random() * pokemonArray.length);
-    // const imageUrl = pokemonArray[randomIndex];
-    //    while (uniqueRandomArray.length < pokemonArray.length) {
-    //     const randomIndex = Math.floor(Math.random() * pokemonArray.length);
-    //     const randomElement = pokemonArray[randomIndex];
-      
-        if (!pokemonArray.includes(randomIndex)) {
-           // Create an image element
-    const img = document.createElement("img");
-    const imageUrl = pokemonArray[randomIndex];
+    const img = document.createElement('img');
     img.src = imageUrl;
-   // Append the image to the container
-    container.appendChild(img);
-        }
-        
-    //   }
-    //   function appendRandomPokemon(){
-    //   const container = document.getElementById("image-container");
-    // const imageUrl = uniqueRandomArray[randomIndex]; 
-    // Create an image element
+    document.body.appendChild(img);
+  }
+}
+
+// Example usage: append an image every 2 seconds
+setInterval(appendImage, 100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const container = document.getElementById("image-container"); 
+// // const randomIndex = Math.floor(Math.random() * pokemonArray.length);
 //     const img = document.createElement("img");
-//     const imageUrl = pokemonArray[randomIndex];
+//     const imageUrl =  pokemonArray;
+//     // const imageUrl = pokemonArray[randomIndex];
 //     img.src = imageUrl;
 //    // Append the image to the container
 //     container.appendChild(img);
-  }
+//         // }
 
 
-  let imageCount = 0;
-  const maxImages = 61;
-  const intervalId = setInterval(() => {
-  if (imageCount < maxImages) {
-    // Append your image here
-    appendRandomPokemon(); 
-    imageCount++;
-  } else {
-    clearInterval(intervalId); // Stop the interval when the limit is reached
-  }
-}, 300); 
+
+// // // Append Pokemon Image
+//   function appendRandomPokemon() {
+ 
+  
+    
+    
+//     // const container = document.getElementById("image-container"); 
+//   // Get a random index from the array
+   
+//           //  Create an image element
+//     const container = document.getElementById("image-container"); 
+//     const img = document.createElement("img");
+//     const imageUrl =  shuffledArray[i];
+//     // const imageUrl = pokemonArray[randomIndex];
+//     img.src = imageUrl;
+//    // Append the image to the container
+//     container.appendChild(img);
+//         }
+        
+      // }
+  //     function appendRandomPokemon(){
+  //     const container = document.getElementById("image-container");
+  //   const imageUrl = uniqueRandomArray[randomIndex]; 
+  //   Create an image element
+  //   const img = document.createElement("img");
+  //   const imageUrl = pokemonArray[randomIndex];
+  //   img.src = imageUrl;
+  //  // Append the image to the container
+  //   container.appendChild(img);
+  // }
+
+
+//   let imageCount = 0;
+//   const maxImages = 61;
+//   const intervalId = setInterval(() => {
+//   if (imageCount < maxImages) {
+//     // Append your image here
+//     appendRadnomPokemon(); 
+//     imageCount++;
+//   } else {
+//     clearInterval(intervalId); // Stop the interval when the limit is reached
+//   }
+// }, 300); 
 
 
 
