@@ -29,10 +29,19 @@ function appendImage() {
     document.body.appendChild(img);
   }
 }
+function randomInterval(callback, minDelay, maxDelay) {
+  function execute() {
+    appendImage(); // Call the provided function
 
-// Example usage: append an image every 2 seconds
-setInterval(appendImage, 100);
-
+    // Schedule the next execution with a random delay
+    const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+    setTimeout(execute, delay);
+  }
+  execute(); // Start the first execution
+}
+// Example usage:
+randomInterval(() => {
+  }, 100, 1000); // Random delay between 1-5 seconds
 
 
 
