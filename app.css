@@ -34,8 +34,13 @@ font-family:"VT323";
   height:5rem; 
   padding:auto; 
   margin:auto; 
-  border: 1rem solid #00008b;
-  border-style: double;
+  /* border: 1rem solid #00008b;
+  border-style: double; */
+  box-shadow:
+  0 0 0 5px red,
+  0 0 0 10px green,
+  0 0 0 15px red,
+  0 0 0 20px green;
 
 }
 
