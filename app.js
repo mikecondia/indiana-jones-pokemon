@@ -16,7 +16,6 @@ function shuffle(array) {
   }
   return array;
 }
-
 const shuffledUrls = shuffle(pokemonArray);
 
 // Append images one at a time
@@ -39,7 +38,6 @@ function randomInterval(callback, minDelay, maxDelay) {
   }
   execute(); // Start the first execution
 }
-// Example usage:
 randomInterval(() => {
   }, 100, 1000); // Random delay between 1-5 seconds
 
