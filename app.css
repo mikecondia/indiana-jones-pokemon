@@ -28,7 +28,6 @@ font-family:"VT323";
   align-items: center;
   margin:auto;
   background-color: #000000;
-color: #FFE81F;
 padding: 15px 25px;
 text-decoration: none;
 font-family:"VT323"; 
@@ -42,6 +41,27 @@ font-family:"VT323";
   0 0 0 15px #c2eefb,
   0 0 0 20px #12aef6,
   0 0 0 25px #00008b;
+}
+a{
+  background-color: blue; 
+  ;
+    /* Create the gradient. */
+    background-image: linear-gradient(
+ 
+        #FF5733 0% 46%,
+        #FFE81F 46% 56%,  
+        #FF5733 56% 100%);
+
+/* Set the background size and repeat properties. */
+background-size: 100%;
+background-repeat: repeat;
+
+/* Use the text as a mask for the background. */
+/* This will show the gradient as a text color rather than element bg. */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent; 
+  
+
 }
 
 
