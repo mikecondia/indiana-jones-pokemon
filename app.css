@@ -21,6 +21,7 @@ font-family:"VT323";
   justify-content: center;
   align-items: center;
   margin:auto;
+  margin-bottom: 3rem;
 }
 .start-button{
   display:flex; 
@@ -36,11 +37,11 @@ font-family:"VT323";
   width:20rem;
   height:5rem;  
   box-shadow:
-  0 0 0 5px #00008b,
-  0 0 0 10px #12aef6,
-  0 0 0 15px #c2eefb,
-  0 0 0 20px #12aef6,
-  0 0 0 25px #00008b;
+  0 0 0 0.3rem #00008b,
+  0 0 0 .6rem #12aef6,
+  0 0 0  1.1rem #c2eefb,
+  0 0 0 1.4rem #12aef6,
+  0 0 0 1.7rem #00008b;
 }
 a{
   background-color: blue; 
@@ -58,10 +59,15 @@ background-repeat: repeat;
 
 /* Use the text as a mask for the background. */
 /* This will show the gradient as a text color rather than element bg. */
--webkit-background-clip: text;
+background-clip: text;
 -webkit-text-fill-color: transparent; 
-  
-
+}
+@media only screen and (max-width: 767px) {
+  /* phones */
+ 
+  .start-button-container{
+    margin:3rem; 
+  }
 }
 
 
