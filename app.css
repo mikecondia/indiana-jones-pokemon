@@ -1,10 +1,20 @@
 body{
   background-color: #000000;
 }
+img{
+  
+  height: 30rem;
+  display: block;
+  margin-top:5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .text-wrapper{
   display: flex;
   height:100%;
-  width:60%; 
+  width:40%; 
   margin: 0 auto; 
   line-height: 1.5;
   word-spacing:0; 
@@ -12,7 +22,7 @@ body{
   position: relative;
 }
 
-p{color: #FFE81F;
+p{color: #ffe603;
 font-family:"VT323"; 
   font-size: 2rem;
   font-weight:900;
@@ -24,6 +34,7 @@ font-family:"VT323";
   align-items: center;
   margin:auto;
   margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 .start-button{
   display:flex; 
@@ -69,6 +80,17 @@ background-clip: text;
  
   .start-button-container{
     margin:3rem; 
+  }
+  .text-wrapper{
+    .text-wrapper{
+      display: flex;
+       
+      margin: 0 auto; 
+   
+      word-spacing:0; 
+      text-align: justify;
+      position: relative;
+    }
   }
 }
 
