@@ -34,6 +34,10 @@ font-family:"VT323";
   margin:auto;
   margin-bottom: 3rem;
   margin-top: 3rem;
+  animation: mymove 5s infinite;
+}
+@keyframes mymove {
+  50% {opacity: 0.3;}
 }
 .start-button{
   display:flex; 
