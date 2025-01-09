@@ -39,7 +39,7 @@ function randomInterval(callback, minDelay, maxDelay) {
   execute(); // Start the first execution
 }
 randomInterval(() => {
-  }, 100, 1000); // Random delay between 1-5 seconds
+  }, 100, 5000); // Random delay between 1-5 seconds
 
 
 
