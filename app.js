@@ -71,8 +71,27 @@ function appendImage() {
     const img = document.createElement('img');
     img.src = imageUrl;
     // container.appendChild(img);
+    // let locations = [];
+
+    // function addLocation(newLocation) {
+    //   if (!locations.includes(newLocation)) {
+    //     locations.push(newLocation);
+    
+    //     // Append the location to the DOM
+    //     let locationElement = document.createElement('div');
+    //     locationElement.textContent = newLocation;
+    //     document.getElementById('locationList').appendChild(locationElement);
+    //   }
+    // 
+    
     const randomIndex = Math.floor(Math.random() * locationsArray.length);
     locationsArray[randomIndex].appendChild(img);
+   
+
+function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+  
   }
 }
 function randomInterval(callback, minDelay, maxDelay) {
@@ -103,66 +122,6 @@ randomInterval(() => {
 
 
 
-
-
-
-
-
-// const container = document.getElementById("image-container"); 
-// // const randomIndex = Math.floor(Math.random() * pokemonArray.length);
-//     const img = document.createElement("img");
-//     const imageUrl =  pokemonArray;
-//     // const imageUrl = pokemonArray[randomIndex];
-//     img.src = imageUrl;
-//    // Append the image to the container
-//     container.appendChild(img);
-//         // }
-
-
-
-// // // Append Pokemon Image
-//   function appendRandomPokemon() {
- 
-  
-    
-    
-//     // const container = document.getElementById("image-container"); 
-//   // Get a random index from the array
-   
-//           //  Create an image element
-//     const container = document.getElementById("image-container"); 
-//     const img = document.createElement("img");
-//     const imageUrl =  shuffledArray[i];
-//     // const imageUrl = pokemonArray[randomIndex];
-//     img.src = imageUrl;
-//    // Append the image to the container
-//     container.appendChild(img);
-//         }
-        
-      // }
-  //     function appendRandomPokemon(){
-  //     const container = document.getElementById("image-container");
-  //   const imageUrl = uniqueRandomArray[randomIndex]; 
-  //   Create an image element
-  //   const img = document.createElement("img");
-  //   const imageUrl = pokemonArray[randomIndex];
-  //   img.src = imageUrl;
-  //  // Append the image to the container
-  //   container.appendChild(img);
-  // }
-
-
-//   let imageCount = 0;
-//   const maxImages = 61;
-//   const intervalId = setInterval(() => {
-//   if (imageCount < maxImages) {
-//     // Append your image here
-//     appendRadnomPokemon(); 
-//     imageCount++;
-//   } else {
-//     clearInterval(intervalId); // Stop the interval when the limit is reached
-//   }
-// }, 300); 
 
 
 
