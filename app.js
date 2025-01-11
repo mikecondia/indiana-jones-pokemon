@@ -51,7 +51,6 @@ const slot40 = document.getElementById("image-container-40");
 locationsArray = [slot1,slot2,slot3,slot4,slot5,slot6,slot7,slot8,slot9,slot10,slot11,slot12,slot13,slot14,slot15,slot16,
   slot17,slot18,slot19,slot20,slot21,slot22,slot23,slot24,slot25,slot26,slot27,slot28,slot29,slot30,slot31,slot32,slot33,slot34,slot35,
   slot36, slot37,slot38,slot39,slot40]; 
- 
 
 // Shuffle the array (using the Fisher-Yates algorithm)
 function shuffle(array) {
@@ -66,12 +65,14 @@ const shuffledUrls = shuffle(pokemonArray);
 // Append images one at a time
 function appendImage() {
   if (shuffledUrls.length > 0) {
-    const container = document.getElementById("image-container-1");
+    // const container = document.getElementById("image-container-1");
+    // const container = document.querySelectorAll('.container-style');
     const imageUrl = shuffledUrls.pop();
-
     const img = document.createElement('img');
     img.src = imageUrl;
-    container.appendChild(img);
+    // container.appendChild(img);
+    const randomIndex = Math.floor(Math.random() * locationsArray.length);
+    locationsArray[randomIndex].appendChild(img);
   }
 }
 function randomInterval(callback, minDelay, maxDelay) {
@@ -85,7 +86,7 @@ function randomInterval(callback, minDelay, maxDelay) {
   execute(); // Start the first execution
 }
 randomInterval(() => {
-  }, 100, 5000); // Random delay between 1-5 seconds
+  }, 100, 200); // Random delay between 1-5 seconds
 
 
 

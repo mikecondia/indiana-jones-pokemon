@@ -17,8 +17,7 @@
     height: 4rem;
 }
 img{
-    width:5.5rem;
-    height:5rem; 
+    object-fit: contain;
     animation: pokemon-fly-in  2s forwards;
 }
 @keyframes pokemon-fly-in {
