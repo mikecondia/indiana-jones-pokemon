@@ -70,7 +70,6 @@ function appendImage() {
     const imageUrl = shuffledUrls.pop();
     const img = document.createElement('img');
     img.src = imageUrl;   
-    img.id ='appended-image';
     const randomIndex = Math.floor(Math.random() * container.length);
     container[randomIndex].appendChild(img);
   }
@@ -96,14 +95,17 @@ randomInterval(() => {
   document.addEventListener('keydown', function(event) {
     if (event.key === 'ArrowLeft') {
       angle -= 10; 
-      event.preventDefault();
-      if(angle < -90) angle = 0; 
+      if(angle < -90) angle = -90;
+      event.preventDefault(); 
     } else if (event.key === 'ArrowRight') {
       angle += 10;
+      if(angle > 90) angle = 90;
       event.preventDefault();
     }
     div.style.transform = `rotate(${angle}deg)`;
   });
+  
+
 
 
 
