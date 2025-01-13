@@ -16,10 +16,11 @@ body{
 #x-wing-fighter{
     justify-content: center;
     align-items: center;
-    width:5rem;
-    height:5rem;
+    width:6rem;
+    height:6rem;
+    margin-bottom:3rem; 
     background-image:url("images/x_wing.jpg");
-    background-size: 5rem 5rem;
+    background-size: 6rem 6rem;
     position:fixed;
     bottom:0; 
     right:50%; 
