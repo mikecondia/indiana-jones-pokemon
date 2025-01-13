@@ -96,11 +96,12 @@ randomInterval(() => {
   document.addEventListener('keydown', function(event) {
     if (event.key === 'ArrowLeft') {
       angle -= 10; 
+      if(angle < -90) angle = -90; 
       event.preventDefault();
-      if(angle < -90) angle = 0; 
     } else if (event.key === 'ArrowRight') {
       angle += 10;
       event.preventDefault();
+      if(angle > 90) angle = 90; 
     }
     div.style.transform = `rotate(${angle}deg)`;
   });
