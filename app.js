@@ -70,6 +70,7 @@ function appendImage() {
     const imageUrl = shuffledUrls.pop();
     const img = document.createElement('img');
     img.src = imageUrl;   
+    img.id ='appended-image';
     const randomIndex = Math.floor(Math.random() * container.length);
     container[randomIndex].appendChild(img);
   }
@@ -87,7 +88,22 @@ function randomInterval(callback, minDelay, maxDelay) {
 randomInterval(() => {
   }, 100, 4000); // Random delay between 1-5 seconds
 
+  // Arrow Keys to move x-wing
 
+  let angle = 0;
+  const div = document.getElementById("x-wing-fighter");
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+      angle -= 10; 
+      event.preventDefault();
+      if(angle < -90) angle = 0; 
+    } else if (event.key === 'ArrowRight') {
+      angle += 10;
+      event.preventDefault();
+    }
+    div.style.transform = `rotate(${angle}deg)`;
+  });
 
 
 
