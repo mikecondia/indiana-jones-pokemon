@@ -7,6 +7,7 @@ const pokemonArray = ["images/1.gif", "images/4.gif", "images/7.gif", "images/10
      "images/102.gif", "images/104.gif","images/108.gif", "images/109.gif", "images/113.gif", "images/114.gif",
     "images/116.gif","images/118.gif","images/120.gif","images/122.gif","images/129.gif", "images/132.gif","images/133.gif","images/138.gif","images/147.gif","images/151.gif","images/175.gif"
 ];
+const pokeball = "images/pokeball.png"; 
 // const slot1 = document.getElementById("image-container-1");
 // const slot2 = document.getElementById("image-container-2");
 // const slot3 = document.getElementById("image-container-3");
@@ -70,6 +71,7 @@ function appendImage() {
     const imageUrl = shuffledUrls.pop();
     const img = document.createElement('img');
     img.src = imageUrl;   
+    img.id ='appended-image';
     const randomIndex = Math.floor(Math.random() * container.length);
     container[randomIndex].appendChild(img);
   }
@@ -90,22 +92,23 @@ randomInterval(() => {
   // Arrow Keys to move x-wing
 
   let angle = 0;
-  const div = document.getElementById("x-wing-fighter");
+  const xWingRotate = document.getElementById("x-wing-fighter");
+
+  //CONTROLS
 
   document.addEventListener('keydown', function(event) {
     if (event.key === 'ArrowLeft') {
       angle -= 10; 
-      if(angle < -90) angle = -90;
-      event.preventDefault(); 
+      event.preventDefault();
+      if(angle < -90) angle = 0; 
     } else if (event.key === 'ArrowRight') {
       angle += 10;
       if(angle > 90) angle = 90;
       event.preventDefault();
+      if(angle > 90) angle = 90; 
     }
     div.style.transform = `rotate(${angle}deg)`;
   });
-  
-
 
 
 

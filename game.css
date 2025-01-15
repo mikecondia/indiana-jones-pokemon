@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: #2d383a;
 }
  .container-for-array{
     margin-top:4rem;
@@ -9,33 +9,17 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    
+   
 }
-.container {
-    width: 500px;
-    height: 300px;
-    border: 1px solid black;
-    position: relative;
-  }
-  
-  #bullet {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: red;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 
 #x-wing-fighter{
     justify-content: center;
     align-items: center;
-    width:6rem;
-    height:6rem;
-    margin-bottom: 2rem;
+    width:5rem;
+    height:5rem;
     background-image:url("images/x_wing.jpg");
-    background-size: 6rem 6rem;
+    background-size: 5rem 5rem;
     position:fixed;
     bottom:0; 
     right:50%; 
@@ -44,7 +28,23 @@ body{
     width:5rem;
     height: 5rem;
 }
-img{
+.pokeball-styles{
+    width:2rem;
+    height: 2rem;
+    animation: pokeball-spin .3s infinite linear;
+}
+
+
+@keyframes pokeball-spin{
+    from {
+        transform: rotate(0deg); 
+    }
+    to{
+        transform: rotate(360deg); 
+    }
+}
+
+.pokemon-styles{
     object-fit:contain;
     width:4rem;
     height: 4rem;
