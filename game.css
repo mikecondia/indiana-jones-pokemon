@@ -12,14 +12,29 @@ body{
     
    
 }
+#pokeball-container{
+    justify-content: center;
+    align-items: center;
+    width:6rem;
+    height:6rem;
+    margin-bottom:3rem; 
+    background-size: 6rem 6rem;
+    position:fixed;
+    bottom:0; 
+    right:50%; 
+    
+}
+
+
 
 #x-wing-fighter{
     justify-content: center;
     align-items: center;
-    width:5rem;
-    height:5rem;
-    background-image:url("images/x_wing.jpg");
-    background-size: 5rem 5rem;
+    width:6rem;
+    height:6rem;
+    margin-bottom:3rem; 
+    background-image:url("images/x-wing.png");
+    background-size: 6rem 6rem;
     position:fixed;
     bottom:0; 
     right:50%; 
