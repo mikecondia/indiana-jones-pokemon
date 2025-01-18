@@ -1,12 +1,12 @@
-// const pokemonArray = ["images/1.gif", "images/4.gif", "images/7.gif", "images/10.gif","images/12.gif",
-//   "images/13.gif", "images/16.gif", "images/19.gif", "images/21.gif", "images/23.gif", "images/25.gif","images/27.gif",
-//   "images/29.gif","images/32.gif","images/35.gif","images/37.gif","images/39.gif","images/41.gif", "images/43.gif","images/46.gif","images/48.gif","images/50.gif",
-//   "images/52.gif", "images/54.gif","images/56.gif", "images/58.gif", "images/60.gif", "images/63.gif", "images/66.gif", "images/69.gif","images/72.gif",
-//   "images/74.gif", "images/77.gif", "images/79.gif", "images/81.gif", "images/83.gif", "images/84.gif",
-//   "images/86.gif","images/88.gif", "images/90.gif", "images/92.gif", "images/96.gif", "images/98.gif", "images/100.gif",
-//    "images/102.gif", "images/104.gif","images/108.gif", "images/109.gif", "images/113.gif", "images/114.gif",
-//   "images/116.gif","images/118.gif","images/120.gif","images/122.gif","images/129.gif", "images/132.gif","images/133.gif","images/138.gif","images/147.gif","images/151.gif","images/175.gif"
-// ];
+const pokemonArray = ["images/1.gif", "images/4.gif", "images/7.gif", "images/10.gif","images/12.gif",
+  "images/13.gif", "images/16.gif", "images/19.gif", "images/21.gif", "images/23.gif", "images/25.gif","images/27.gif",
+  "images/29.gif","images/32.gif","images/35.gif","images/37.gif","images/39.gif","images/41.gif", "images/43.gif","images/46.gif","images/48.gif","images/50.gif",
+  "images/52.gif", "images/54.gif","images/56.gif", "images/58.gif", "images/60.gif", "images/63.gif", "images/66.gif", "images/69.gif","images/72.gif",
+  "images/74.gif", "images/77.gif", "images/79.gif", "images/81.gif", "images/83.gif", "images/84.gif",
+  "images/86.gif","images/88.gif", "images/90.gif", "images/92.gif", "images/96.gif", "images/98.gif", "images/100.gif",
+   "images/102.gif", "images/104.gif","images/108.gif", "images/109.gif", "images/113.gif", "images/114.gif",
+  "images/116.gif","images/118.gif","images/120.gif","images/122.gif","images/129.gif", "images/132.gif","images/133.gif","images/138.gif","images/147.gif","images/151.gif","images/175.gif"
+];
 const pokeball = "images/pokeball.png"; 
 // // const slot1 = document.getElementById("image-container-1");
 // // const slot2 = document.getElementById("image-container-2");
@@ -53,116 +53,89 @@ const pokeball = "images/pokeball.png";
 // //   slot17,slot18,slot19,slot20,slot21,slot22,slot23,slot24,slot25,slot26,slot27,slot28,slot29,slot30,slot31,slot32,slot33,slot34,slot35,
 // //   slot36, slot37,slot38,slot39,slot40]; 
 
-// // Shuffle the array (using the Fisher-Yates algorithm)
-// function shuffle(array) {
-// for (let i = array.length - 1; i > 0; i--) {
-//   const j = Math.floor(Math.random() * (i + 1));
-//   [array[i], array[j]] = [array[j], array[i]];
-// }
-// return array;
-// }
-// const shuffledUrls = shuffle(pokemonArray);
+// Shuffle the array (using the Fisher-Yates algorithm)
+function shuffle(array) {
+for (let i = array.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [array[i], array[j]] = [array[j], array[i]];
+}
+return array;
+}
+const shuffledUrls = shuffle(pokemonArray);
 
-// // Append images one at a time
-// function appendImage() {
-// if (shuffledUrls.length > 0) {
-//   // const container = document.getElementById("image-container-1");
-//   const container = document.querySelectorAll('.container-style');
-//   const imageUrl = shuffledUrls.pop();
-//   const img = document.createElement('img');
-//   img.src = imageUrl;   
-//   img.className = "pokemon-styles"
-//   // img.id ='appended-image';
-//   const randomIndex = Math.floor(Math.random() * container.length);
-//   container[randomIndex].appendChild(img);
-// }
-// }
-// function randomInterval(callback, minDelay, maxDelay) {
-// function execute() {
-//   appendImage(); // Call the provided function
+// Append images one at a time
+function appendImage() {
+if (shuffledUrls.length > 0) {
+  // const container = document.getElementById("image-container-1");
+  const container = document.querySelectorAll('.container-style');
+  const imageUrl = shuffledUrls.pop();
+  const img = document.createElement('img');
+  img.src = imageUrl;   
+  img.className = "pokemon-styles"
+  // img.id ='appended-image';
+  const randomIndex = Math.floor(Math.random() * container.length);
+  container[randomIndex].appendChild(img);
+}
+}
+function randomInterval(callback, minDelay, maxDelay) {
+function execute() {
+  appendImage(); // Call the provided function
 
-//   // Schedule the next execution with a random delay
-//   const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
-//   setTimeout(execute, delay);
-// }
-// execute(); // Start the first execution
-// }
-// randomInterval(() => {
-// }, 100, 4000); // Random delay between 1-5 seconds
+  // Schedule the next execution with a random delay
+  const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+  setTimeout(execute, delay);
+}
+execute(); // Start the first execution
+}
+randomInterval(() => {
+}, 100, 4000); // Random delay between 1-5 seconds
 
-// // Arrow Keys to move x-wing
+// Arrow Keys to move x-wing
 
-// let angle = 0;
-// const xWingRotate = document.getElementById("x-wing-fighter");
+let angle = 0;
+const xWingRotate = document.getElementById("x-wing-fighter");
 
-// //CONTROLS
+//CONTROLS
 
-// document.addEventListener('keydown', function(event) {
-//   if (event.key === 'ArrowLeft') {
-//     angle -= 10; 
-//     if(angle < -90) angle = -90; 
-//     event.preventDefault();
-//   } else if (event.key === 'ArrowRight') {
-//     angle += 10;
-//     event.preventDefault();
-//     if(angle > 90) angle = 90; 
-//   }
-//   xWingRotate.style.transform = `rotate(${angle}deg)`;
-//   if (event.key === ' ') {
-//     const container = document.getElementById('x-wing-fighter'); 
-//     const img = document.createElement('img');
-//     img.src = 'images/pokeball.png'; // Replace with your image path
-//     img.className = "pokeball-styles"
-//     container.appendChild(img);
-    
-//   }
-// });
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowLeft') {
+    angle -= 10; 
+    if(angle < -90) angle = -90; 
+    event.preventDefault();
+  } else if (event.key === 'ArrowRight') {
+    angle += 10;
+    event.preventDefault();
+    if(angle > 90) angle = 90; 
+  }
+  xWingRotate.style.transform = `rotate(${angle}deg)`;
+  if (event.key === ' ') {
+    // const container = document.getElementById('x-wing-fighter'); 
+    const img = document.createElement('img');
+    img.src = 'images/pokeball.png'; // Replace with your image path
+    img.className = "pokeball-styles"
+    // container.appendChild(img); 
+    document.body.appendChild(img);
+}
+});
+
 
 
 // CREATING POKEBALLS
-// Create the Projectile Object
-// Create the canvas and get the 2D context
+// 
+// let position = 20;
 
-document.body.appendChild(canvas);
-const ctx = canvas.getContext('2d');
+// function launchTorpedo() {
+//   const interval = setInterval(() => {
+//     position += 5;
+//     torpedo.style.left = position + 'px';
 
-// Set canvas dimensions
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+//     if (position > 400) {
+//       clearInterval(interval);
+//     }
+//   }, 20);
+// }
 
-// Torpedo object
-const torpedo = {
-  x: 0,
-  y: canvas.height / 2,
-  width: 20,
-  height: 10,
-  speed: 10
-};
-// Draw the torpedo
-function draw() {
-  document.addEventListener('keydown', function(event) {
-    if (event.key === ' ') {
-      const container = document.getElementsByTagName('body'); 
-      const img = document.createElement('img');
-      img.src = 'images/pokeball.png'; // Replace with your image path
-      img.className = "pokeball-styles"
-      container.appendChild(img);
-      
-    }
-  });
-}
-
-// Update torpedo position
-function update() {
-  torpedo.x += torpedo.speed;
-
-  // Check if torpedo goes off screen
-  if (torpedo.x > canvas.width) {
-    torpedo.x = 0; 
-  }
-
-  draw();
-}
+// launchTorpedo();
 
 
 
