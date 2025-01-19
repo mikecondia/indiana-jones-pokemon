@@ -94,6 +94,7 @@ randomInterval(() => {
 
 let angle = 0;
 const xWingRotate = document.getElementById("x-wing-fighter");
+// const pokeballRotate = document.getElementById('pokeball-container'); 
 
 //CONTROLS
 
@@ -108,13 +109,16 @@ document.addEventListener('keydown', function(event) {
     if(angle > 90) angle = 90; 
   }
   xWingRotate.style.transform = `rotate(${angle}deg)`;
+  // pokeballRotate.style.transform = `rotate(${angle}deg)`;
+
   if (event.key === ' ') {
-    // const container = document.getElementById('x-wing-fighter'); 
+    const container = document.getElementById('pokeball-container'); 
     const img = document.createElement('img');
     img.src = 'images/pokeball.png'; // Replace with your image path
     img.className = "pokeball-styles"
-    // container.appendChild(img); 
-    document.body.appendChild(img);
+    container.appendChild(img); 
+    event.preventDefault();
+    // document.body.appendChild(img);
 }
 });
 

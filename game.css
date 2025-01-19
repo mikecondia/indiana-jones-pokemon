@@ -12,16 +12,24 @@ body{
     
    
 }
+#pokemon-and-x-wing-container{
+    background-color: aqua;
+}
 #pokeball-container{
     justify-content: center;
     align-items: center;
     width:6rem;
-    height:6rem;
+    height:9rem;
     margin-bottom:3rem; 
     background-size: 6rem 6rem;
     position:fixed;
     bottom:0; 
-    right:50%; 
+    right:50%;  
+    background-color: yellow;
+    position:absolute;
+    top:.5rem; 
+    z-index:1;
+    
     
 }
 
@@ -38,12 +46,15 @@ body{
     position:fixed;
     bottom:0; 
     right:50%; 
+    z-index:2;
+    background-color: red;
 }
 .container-style{
     width:5rem;
     height: 5rem;
 }
 .pokeball-styles{
+    
     width:2rem;
     height: 2rem;
     animation: pokeball-spin .3s infinite linear;
