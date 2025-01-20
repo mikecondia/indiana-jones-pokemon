@@ -118,6 +118,7 @@ document.addEventListener('keydown', function(event) {
     img.className = "pokeball-styles"
     container.appendChild(img); 
     event.preventDefault();
+    myMove(); 
     // document.body.appendChild(img);
 }
 });
@@ -126,6 +127,21 @@ document.addEventListener('keydown', function(event) {
 
 // CREATING POKEBALLS
 // 
+const id = null;
+function myMove() {
+  let elem = document.getElementById("pokeball-container");   
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 500) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.bottom = pos + 'px'; 
+    }
+  }
+}
 // let position = 20;
 
 // function launchTorpedo() {
