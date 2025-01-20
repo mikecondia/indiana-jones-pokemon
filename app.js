@@ -75,6 +75,9 @@ if (shuffledUrls.length > 0) {
   // img.id ='appended-image';
   const randomIndex = Math.floor(Math.random() * container.length);
   container[randomIndex].appendChild(img);
+  setTimeout(() => {
+    img.remove();
+  }, 5000);
 }
 }
 function randomInterval(callback, minDelay, maxDelay) {
@@ -86,9 +89,12 @@ function execute() {
   setTimeout(execute, delay);
 }
 execute(); // Start the first execution
+
 }
 randomInterval(() => {
-}, 100, 4000); // Random delay between 1-5 seconds
+}, 100, 4000); 
+// Random delay between 1-5 seconds
+
 
 // Arrow Keys to move x-wing
 
@@ -118,7 +124,27 @@ document.addEventListener('keydown', function(event) {
     img.className = "pokeball-styles"
     container.appendChild(img); 
     event.preventDefault();
-    myMove(); 
+    let appendCount = 0;
+// const maxAppends = 1; // Maximum number of appends allowed
+// const timeLimit = 3000; // Time limit in milliseconds (1 second in this example)
+
+// function appendItem(item) {
+//   if (appendCount < maxAppends) {
+//     // Append the item to your array or perform your appending logic here
+//     console.log("Appended:", item);
+//     appendCount++;
+//   } else {
+//     console.log("Append limit reached!");
+//   }
+// }
+
+// // Reset the counter after the time limit 
+// setTimeout(() => {
+//   appendCount = 0;
+//   console.log("Counter reset");
+// }, timeLimit);
+    pokeballLaunch(); 
+   // 5000 milliseconds = 5 second
     // document.body.appendChild(img);
 }
 });
@@ -128,41 +154,20 @@ document.addEventListener('keydown', function(event) {
 // CREATING POKEBALLS
 // 
 const id = null;
-function myMove() {
+function pokeballLaunch() {
   let elem = document.getElementById("pokeball-container");   
   let pos = 0;
   clearInterval(id);
   id = setInterval(frame, 5);
   function frame() {
-    if (pos == 500) {
+    if (pos == 100) {
       clearInterval(id);
     } else {
       pos++; 
       elem.style.bottom = pos + 'px'; 
     }
   }
-}
-// let position = 20;
-
-// function launchTorpedo() {
-//   const interval = setInterval(() => {
-//     position += 5;
-//     torpedo.style.left = position + 'px';
-
-//     if (position > 400) {
-//       clearInterval(interval);
-//     }
-//   }, 20);
-// }
-
-// launchTorpedo();
-
-
-
-
-
-// Start the game loop
-// setInterval(update, 16); // 60 fps (approx)
+}; 
 
 
 
