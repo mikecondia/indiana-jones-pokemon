@@ -75,9 +75,6 @@ if (shuffledUrls.length > 0) {
   // img.id ='appended-image';
   const randomIndex = Math.floor(Math.random() * container.length);
   container[randomIndex].appendChild(img);
-  setTimeout(() => {
-    img.remove();
-  }, 5000);
 }
 }
 function randomInterval(callback, minDelay, maxDelay) {
@@ -118,49 +115,54 @@ document.addEventListener('keydown', function(event) {
   // pokeballRotate.style.transform = `rotate(${angle}deg)`;
 
   if (event.key === ' ') {
+    pokeballsArray = [];
     const container = document.getElementById('pokeball-container'); 
     const img = document.createElement('img');
     img.src = 'images/pokeball.png'; // Replace with your image path
     img.className = "pokeball-styles"
     container.appendChild(img); 
     event.preventDefault();
-    let appendCount = 0;
+    pokeballsArray.push(img); 
+    console.log(pokeballsArray); 
+//     let appendCount = 0;
 // const maxAppends = 1; // Maximum number of appends allowed
-// const timeLimit = 3000; // Time limit in milliseconds (1 second in this example)
+// const timeLimit = 500; // Time limit in milliseconds (1 second in this example)
 
-// function appendItem(item) {
-//   if (appendCount < maxAppends) {
+// function appendItem() {
+//   if (appendCount > maxAppends) {
 //     // Append the item to your array or perform your appending logic here
-//     console.log("Appended:", item);
-//     appendCount++;
+   
+//     console.log("Appended:");
 //   } else {
 //     console.log("Append limit reached!");
+//     img.pop(); 
 //   }
+//   appendItem(); 
 // }
 
-// // Reset the counter after the time limit 
+// Reset the counter after the time limit 
 // setTimeout(() => {
 //   appendCount = 0;
+//   appendItem(); 
 //   console.log("Counter reset");
 // }, timeLimit);
+
     pokeballLaunch(); 
    // 5000 milliseconds = 5 second
     // document.body.appendChild(img);
 }
 });
 
-
-
 // CREATING POKEBALLS
 // 
-const id = null;
+let id = null;
 function pokeballLaunch() {
   let elem = document.getElementById("pokeball-container");   
   let pos = 0;
   clearInterval(id);
   id = setInterval(frame, 5);
   function frame() {
-    if (pos == 100) {
+    if (pos == 1000) {
       clearInterval(id);
     } else {
       pos++; 
