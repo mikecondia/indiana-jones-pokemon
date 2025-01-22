@@ -118,27 +118,28 @@ document.addEventListener('keydown', function(event) {
     pokeballsArray = [];
     const container = document.getElementById('pokeball-container'); 
     const img = document.createElement('img');
+    const newDiv = document.createElement('div'); 
     img.src = 'images/pokeball.png'; // Replace with your image path
     img.className = "pokeball-styles"
-    container.appendChild(img); 
+    newDiv.appendChild(img);
+    // container.appendChild(img); 
+    container.appendChild(newDiv); 
     event.preventDefault();
-    pokeballsArray.push(img); 
+    pokeballsArray.push(newDiv); 
     console.log(pokeballsArray); 
-//     let appendCount = 0;
-// const maxAppends = 1; // Maximum number of appends allowed
+    let appendCount = 0;
+const maxAppends = 1; // Maximum number of appends allowed
 // const timeLimit = 500; // Time limit in milliseconds (1 second in this example)
 
-// function appendItem() {
-//   if (appendCount > maxAppends) {
-//     // Append the item to your array or perform your appending logic here
-   
-//     console.log("Appended:");
-//   } else {
-//     console.log("Append limit reached!");
-//     img.pop(); 
-//   }
-//   appendItem(); 
-// }
+function removeItem() {
+  if (appendCount > maxAppends) {
+    // Append the item to your array or perform your appending logic here
+    pokeballsArray.pop(newDiv);
+    console.log("Appended:");
+  }
+  
+}
+removeItem(); 
 
 // Reset the counter after the time limit 
 // setTimeout(() => {
